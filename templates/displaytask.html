@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+{% block task1 %}
+{% load static %}
+
+<style>
+    table, th, td {
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+h3,h5{
+margin-left: 10px;
+  margin-right: 10px;
+}
+
+</style>
+<div class="container">
+    {% if display %}
+
+    <table>
+       <tr>
+           <th><h3>Username</h3></th>
+           <th><h3>Tittle</h3></th>
+           <th><h3>Description</h3></th>
+           <th><h3>Picture</h3></th>
+           <th><h3>Date</h3></th>
+       </tr>
+        {% for d in display %}
+        <tr>
+            <td><h5>{{d.uid}} </h5></td>
+            <td><h5>{{d.task_title}} </h5></td>
+            <td><h5>{{d.task_description}}</h5></td>
+            <td><h5><img src="{{ d.task_pic.url }}"></h5></td>
+           <td><h5>{{d.create_time_stamp}} </h5></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

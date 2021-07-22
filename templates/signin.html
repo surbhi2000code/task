@@ -1,0 +1,19 @@
+{% extends 'basic.html' %}
+{% block task1 %}
+
+<div class="container">
+    <div class="jumbotron">
+          {% if registered %}
+    <h1>Thank You for registering!</h1>
+    {% else %}
+<form method="post">
+    {% csrf_token %}
+    <h2>Sign In</h2>
+    {{form.as_p}}
+
+    <input class="btn btn-primary" type="submit" value="SignIn" />
+</form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

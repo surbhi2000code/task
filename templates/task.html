@@ -1,0 +1,19 @@
+{% block task1 %}
+<form method="get">
+<table>
+    <tr>
+        <th><h3>SI NO.</h3></th>
+        <th><h3>Title</h3></th>
+        <th><h3>Parent ID</h3></th>
+    </tr>
+    {% for display in display %}
+    <tr>
+        <td>{{display.SINO}}</td>
+        <td>{{display.title}}</td>
+        <td>{{display.parentID}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+
+{% endblock %}
